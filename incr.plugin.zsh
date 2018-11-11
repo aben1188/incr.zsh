@@ -33,9 +33,9 @@ now_predict=0
 
 function limit-completion
 {
-	if ((compstate[nmatches] <= 1)); then
+	if ((compstate[nmatches] <= 0)); then
 		zle -M ""
-	elif ((compstate[list_lines] > 6)); then
+	elif ((compstate[list_lines] > 50)); then
 		compstate[list]=""
 		zle -M "too many matches."
 	fi
